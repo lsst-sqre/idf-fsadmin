@@ -1,5 +1,5 @@
-idf-fs-admin
-============
+idf-fsadmin
+===========
 
 This is a tool for mounting the filesystems at a given IDF instance,
 with root privilege, for doing manual filesystem work.
