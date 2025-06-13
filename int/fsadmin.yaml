@@ -1,0 +1,42 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: fsadmin
+  namespace: fsadmin
+spec:
+  containers:
+  - name: main
+    image: ghcr.io/lsst-sqre/idf-fsadmin:latest
+    args: [ "tail", "-f", "/dev/null" ]
+    volumeMounts:
+    - mountPath: /mnt/rubin
+      name: rubin
+      readOnly: false
+    - mountPath: /mnt/home
+      name: home
+      readOnly: false
+    - mountPath: /mnt/deleted-sundays
+      name: delete-weekly
+      readOnly: false
+    - mountPath: /mnt/firefly
+      name: firefly
+      readOnly: false
+  volumes:
+  - name: rubin
+    nfs:
+      path: /rubin-share
+      server: 10.91.240.5
+  - name: home
+    nfs:
+      path: /home-share
+      server: 10.91.240.5
+  - name: delete-weekly
+    nfs:
+      path: /delete-weekly-share
+      server: 10.91.240.5
+  - name: firefly
+    nfs:
+      path: /firefly-share
+      server: 10.91.240.5
+
+

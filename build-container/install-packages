@@ -1,0 +1,11 @@
+#!/bin/sh
+
+DEBIAN_FRONTEND="noninteractive"
+export DEBIAN_FRONTEND
+
+chsh -s /bin/bash root  # Oh come on, it's 2025.
+
+apt -y update
+apt -y upgrade
+
+apt -y install screen git rsync emacs-nox
