@@ -71,4 +71,4 @@ jobs:
 
       - name: Report result
         run: |
-          echo Pushed ghcr.io/${{ github.repository }}:${{ steps.build-inithome.outputs.tag }}
+          echo Pushed ghcr.io/${{ github.repository }}:${{ steps.build-idf-fsadmin.outputs.tag }}
