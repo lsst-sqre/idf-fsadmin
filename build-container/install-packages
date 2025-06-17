@@ -5,7 +5,10 @@ export DEBIAN_FRONTEND
 
 chsh -s /bin/bash root  # Oh come on, it's 2025.
 
-apt -y update
-apt -y upgrade
+apt-get -y update
+apt-get -y upgrade
 
-apt -y install screen git rsync emacs-nox
+apt-get -y install screen git rsync emacs-nox python3-pip
+
+pip install --break-system-packages uv  # Yes, we want it in the root python
+
