@@ -8,7 +8,7 @@ chsh -s /bin/bash root  # Oh come on, it's 2025.
 apt-get -y update
 apt-get -y upgrade
 
-apt-get -y install screen git rsync emacs-nox python3-pip
+apt-get -y install screen git rsync emacs-nox python3-pip psmisc quota
 
 pip install --break-system-packages uv  # Yes, we want it in the root python
 
