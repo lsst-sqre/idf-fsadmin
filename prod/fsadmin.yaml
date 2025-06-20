@@ -11,6 +11,8 @@ spec:
     volumeMounts:
     - mountPath: /mnt/filestore
       name: share
+    - mountPath: /mnt/home
+      name: home
     - mountPath: /mnt/rubin
       name: rubin
     - mountPath: /mnt/deleted-sundays
@@ -22,6 +24,10 @@ spec:
     nfs:
       path: /share1
       server: 10.13.105.122
+  - name: home
+    nfs:
+      path: /home-share
+      server: 10.231.144.5
   - name: rubin
     nfs:
       path: /rubin-share
