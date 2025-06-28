@@ -9,8 +9,6 @@ spec:
     image: ghcr.io/lsst-sqre/idf-fsadmin:latest
     args: [ "tail", "-f", "/dev/null" ]
     volumeMounts:
-    - mountPath: /mnt/filestore
-      name: share
     - mountPath: /mnt/home
       name: home
     - mountPath: /mnt/rubin
@@ -20,10 +18,6 @@ spec:
     - mountPath: /mnt/firefly
       name: firefly
   volumes:
-  - name: share
-    nfs:
-      path: /share1
-      server: 10.13.105.122
   - name: home
     nfs:
       path: /home-share
