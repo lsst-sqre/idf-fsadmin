@@ -9,38 +9,38 @@ spec:
     image: ghcr.io/lsst-sqre/idf-fsadmin:latest
     args: [ "tail", "-f", "/dev/null" ]
     volumeMounts:
-    - mountPath: /mnt/home
-      name: home
-      readOnly: false
+    # - mountPath: /mnt/home
+    #   name: home
+    #   readOnly: false
     - mountPath: /mnt/home-tiered
       name: home-tiered
       readOnly: false
-    - mountPath: /mnt/rubin
-      name: rubin
-      readOnly: false
-    - mountPath: /mnt/deleted-sundays
-      name: delete-weekly
-      readOnly: false
-    - mountPath: /mnt/firefly
-      name: firefly
-      readOnly: false
+    # - mountPath: /mnt/rubin
+    #   name: rubin
+    #   readOnly: false
+    # - mountPath: /mnt/deleted-sundays
+    #   name: delete-weekly
+    #   readOnly: false
+    # - mountPath: /mnt/firefly
+    #   name: firefly
+    #   readOnly: false
   volumes:
-  - name: rubin
-    nfs:
-      path: /rubin-share
-      server: 10.234.16.4
-  - name: home 
-    nfs:
-      path: /home-share
-      server: 10.234.16.4
-  - name: delete-weekly
-    nfs:
-      path: /deleted-weekly-share
-      server: 10.234.16.4
-  - name: firefly
-    nfs:
-      path: /firefly-share
-      server: 10.234.16.4
+  # - name: rubin
+  #   nfs:
+  #     path: /rubin-share
+  #     server: 10.234.16.4
+  # - name: home 
+  #   nfs:
+  #     path: /home-share
+  #     server: 10.234.16.4
+  # - name: delete-weekly
+  #   nfs:
+  #     path: /deleted-weekly-share
+  #     server: 10.234.16.4
+  # - name: firefly
+  #   nfs:
+  #     path: /firefly-share
+  #     server: 10.234.16.4
   - name: home-tiered
     nfs:
       path: /home-tiered-share
